@@ -1,0 +1,193 @@
+body.light{
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.title{
+    font-size: 2rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.box{
+    width: 20rem;
+    height: 35rem;
+    background: white;
+    margin-top: 3rem;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.66);
+}
+
+body.light .display{
+    width: 89%;
+    height: 6.5rem;
+    margin: 1rem;
+    box-shadow: inset 3px 3px 15px 2px rgba(0, 0, 0, 0.66);
+    border: 0;
+    border-radius: 10px;
+    color: black;
+    text-align: end;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.display:active{
+    border: none;
+}
+
+.buttons{
+    height: 24rem;
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+}
+
+.button{
+    width: auto;
+    margin: 3px;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 3px 3px 15px 1px rgba(0, 0, 0, 0.66);
+    font-size: 1.5rem;
+    font-weight: bold
+}
+
+.button:hover{
+    cursor: pointer;
+    background: #00000034;
+}
+
+.button.equal{
+    grid-row: span 2;
+    background-color: rgba(210, 105, 30, 0.90);
+}
+
+.button.equal:hover{
+    background-color: rgb(213, 99, 18);
+}
+
+.button.op{
+    background: rgba(0, 0, 0, 0.425);
+}
+
+.button.op:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.button.clear{
+    background: rgba(255, 0, 0, 0.644);
+}
+
+.button.clear:hover{
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.themeButton{
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    position: fixed;
+    right: 5rem;
+    top: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: black;
+}
+
+
+
+
+
+body.dark{
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+body.dark .title{
+    color: white;
+}
+
+body.dark .box{
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 15px 2px rgba(255, 255, 255, 0.204);
+    color: white;
+}
+
+body.dark .display{
+    box-shadow: inset 3px 3px 15px 2px rgba(255, 255, 255, 0.204);
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+.display:active{
+    border: none;
+}
+
+.buttons{
+    height: 24rem;
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+}
+
+body.dark .button{
+    color: rgba(255, 255, 255, 0.7);
+    box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.204);
+}
+
+.button:hover{
+    cursor: pointer;
+    background: #00000034;
+}
+
+.button.equal{
+    grid-row: span 2;
+    background-color: rgba(210, 105, 30, 0.90);
+}
+
+.button.equal:hover{
+    background-color: rgb(213, 99, 18);
+}
+
+.button.op{
+    background: rgba(0, 0, 0, 0.425);
+}
+
+.button.op:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.button.clear{
+    background: rgba(255, 0, 0, 0.644);
+}
+
+.button.clear:hover{
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.themeButton{
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    position: fixed;
+    right: 5rem;
+    top: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: black;
+}
+
+

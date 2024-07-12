@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="calStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body class="light">
+    <div class="title">ABHI'S CALCULATOR</div>
+        <button class="themeButton" id="theme">
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+    <div class="box">
+        <input type="text" class="display" id="displayBox">
+        <div class="buttons">
+            <div class="button clear" onclick="clearDisp()">C</div>
+            <div class="button op" onclick="undo()"><</div>
+            <div class="button op" onclick="appendValue('/')">/</div>
+            <div class="button op" onclick="appendValue('*')">x</div>
+            <div class="button" onclick="appendValue('7')">7</div>
+            <div class="button" onclick="appendValue('8')">8</div>
+            <div class="button" onclick="appendValue('9')">9</div>
+            <div class="button op" onclick="appendValue('-')">-</div>
+            <div class="button" onclick="appendValue('4')">4</div>
+            <div class="button" onclick="appendValue('5')">5</div>
+            <div class="button" onclick="appendValue('6')">6</div>
+            <div class="button op" onclick="appendValue('+')">+</div>
+            <div class="button" onclick="appendValue('1')">1</div>
+            <div class="button" onclick="appendValue('2')">2</div>
+            <div class="button" onclick="appendValue('3')">3</div>
+            <div class="button equal" onclick="calculate()">=</div>
+            <div class="button" onclick="appendValue('00')">00</div>
+            <div class="button" onclick="appendValue('0')">0</div>
+            <div class="button" onclick="appendValue('.')">.</div>
+        </div>
+    </div>
+    <!-- <div class="switch">
+        <label for="themeslider" class="themeLabel">Light</label>
+        <input type="checkbox" id="themeslider">
+        <label for="themeslider" class="slider"></label>
+        <label for="themeslider" class="themeLabel">Dark</label>
+    </div> -->
+    <script>
+        const themeButton = document.getElementById('theme');
+        const bodyVar = document.body;
+        const icon = document.getElementById('themeIcon');
+
+        themeButton.addEventListener('click', ()=>{
+            bodyVar.classList.toggle('dark');
+            if(bodyVar.classList.contains('dark')){
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+            else{
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        
+        function appendValue(a){
+            const screen = document.getElementById('displayBox');
+            screen.value += a;
+        }
+
+        function calculate(){
+            const screen = document.getElementById('displayBox');
+            try{
+                screen.value = eval(screen.value);
+            }
+            catch{
+                screen.value = 'Error';
+            }
+        }
+
+        function clearDisp(){
+            const screen = document.getElementById('displayBox');
+            screen.value = '';
+        }
+
+        function undo(){
+            const screen = document.getElementById('displayBox');
+            if(screen.value.length > 0){
+                screen.value = screen.value.slice(0,-1);
+            }
+        }
+    </script>
+</body>
+</html>
